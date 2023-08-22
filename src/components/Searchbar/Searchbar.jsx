@@ -10,16 +10,16 @@ import {
 } from './SearchBar.styled';
 
 const SearchBar =({onSubmit}) => {
-  const [searchName, setSearchName] = useState('');
+ 
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = event => setInputValue(event.target.value);
   
  const handleSubmit = event => {
   event.preventDefault(); // Запобігаємо стандартній поведінці форми
-  setSearchName(inputValue.trim()); //Отримуємо введений пошуковий запит і видаляємо прогалини
-  onSubmit(searchName); // Передаємо введений пошуковий запит батьківському компоненту
-  event.target.reset(); // Скидаємо значення у полі введення після надсилання форми
+  //setSearchName(inputValue.trim()); //Отримуємо введений пошуковий запит і видаляємо прогалини
+  onSubmit(inputValue); // Передаємо введений пошуковий запит батьківському компоненту
+  setInputValue(""); // Скидаємо значення у полі введення після надсилання форми
 };
   
 
